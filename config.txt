@@ -1,3 +1,13 @@
+config firewall vip
+    edit ubu-serv
+        set mappedip 192.168.129.3
+        set extintf port1
+        set portforward enable
+        set extport 8080
+        set mappedport 80
+    next
+end
+
 config firewall policy
     edit 1
         set name inside-out
@@ -23,12 +33,4 @@ config firewall policy
     next
 end
 
-config firewall vip
-    edit ubu-serv
-        set mappedip 192.168.129.3
-        set extintf port1
-        set portforward enable
-        set extport 8080
-        set mappedport 80
-    next
-end
+
